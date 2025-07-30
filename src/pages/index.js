@@ -3,7 +3,7 @@ import Produto from "./produto/index";
 export default function Home() {
   return (
     <div>
-      <h1>Oi</h1>
+      <h1>Hello</h1>
     </div>
   );
 }
