@@ -1,5 +1,7 @@
 <a href="https://github.com/IsaacAlves7/boilerplate"><img width="1707" height="960" alt="thumbnail - boilerplate" src="https://github.com/user-attachments/assets/6e2dfd3b-b685-4a11-9c9b-86316172c7ae" /></a>
 
+> Versículo chave: "Consagre ao Senhor tudo o que você faz, e os seus planos serão bem-sucedidos." - Provérbios 16:3
+
 ## Getting Started
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
