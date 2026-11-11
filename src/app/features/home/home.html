@@ -1,0 +1,27 @@
+<h1>Boilerplate Angular</h1>
+<p class="lead">
+  Standalone components, signals, rotas lazy, <code>httpResource</code> e tema claro/escuro.
+</p>
+
+<section>
+  <h2>Posts (via <code>httpResource</code>)</h2>
+
+  @if (posts.isLoading() && !posts.hasValue()) {
+    <p>Carregando posts…</p>
+  } @else if (posts.error()) {
+    <p class="error">Não foi possível carregar os posts.</p>
+    <button type="button" (click)="posts.reload()">Tentar de novo</button>
+  } @else {
+    <ul class="posts">
+      @for (post of posts.value(); track post.id) {
+        <li>
+          <h3>{{ post.title }}</h3>
+          <p>{{ post.body }}</p>
+        </li>
+      } @empty {
+        <li>Nenhum post encontrado.</li>
+      }
+    </ul>
+    <button type="button" (click)="more()" [disabled]="posts.isLoading()">Carregar mais</button>
+  }
+</section>

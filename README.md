@@ -1,44 +1,38 @@
-<a href="https://github.com/IsaacAlves7/boilerplate"><img width="1707" height="960" alt="thumbnail - boilerplate" src="https://github.com/user-attachments/assets/6e2dfd3b-b685-4a11-9c9b-86316172c7ae" /></a>
+# Angular Boilerplate
 
-> Versículo chave: "Consagre ao Senhor tudo o que você faz, e os seus planos serão bem-sucedidos." - Provérbios 16:3
+Base moderna em **Angular 22 + TypeScript (strict)**.
 
-## Getting Started
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## O que vem incluso
+- Standalone components (sem NgModules) e `ChangeDetectionStrategy.OnPush`
+- **Zoneless** change detection e **signals**
+- Control flow nativo (`@if`, `@for`, `@empty`)
+- Rotas com **lazy loading**, `withComponentInputBinding` e View Transitions
+- `HttpClient` com `withFetch()`, interceptors funcionais (URL base e erros) e `httpResource`
+- Tema claro/escuro (`ThemeService`) com variáveis CSS
+- Notificações (toasts) via signals
+- Environments (`src/environments`) com troca automática no build de desenvolvimento
+- Testes com **Vitest**, SCSS e Prettier
 
-<img height="277" align="right" src="https://github.com/user-attachments/assets/02e97d41-8804-43fd-9484-6b42ad49ed20" />
-
-First, run the development server:
-
+## Comandos
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm start        # http://localhost:4200
+npm run build    # saída em dist/
+npm test
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Estrutura
+```
+src/app/
+  core/       # config, interceptors, serviços globais (singletons)
+  layout/     # header e estrutura da página
+  features/   # uma pasta por funcionalidade (home, about, ...)
+  shared/     # componentes reutilizáveis
+  app.config.ts   # providers globais
+  app.routes.ts   # rotas
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-<img src="https://github.com/user-attachments/assets/9ca51759-9063-488d-bea0-6ea294f4ce57" align="right" height="77"> 
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-<img width="720" height="1090" alt="Screenshot_20240608-110409_Instagram" src="https://github.com/user-attachments/assets/cb1e7957-bf0e-496d-87ea-1cb366c45e89" />
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Próximos passos sugeridos
+- Ajustar `apiUrl` em `src/environments/*`
+- Criar features: `ng generate component features/minha-feature/minha-feature`
+- Adicionar SSR: `ng add @angular/ssr`
